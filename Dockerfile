@@ -35,6 +35,7 @@ EXPOSE 22
 
 # ssh key
 ADD id_rsa /home/hidetomo/.ssh/id_rsa
+RUN chown hidetomo:hidetomo /home/hidetomo/.ssh/id_rsa
 
 # vim
 RUN sudo yum -y install vim
@@ -50,6 +51,10 @@ RUN sudo yum -y install less wget bzip2 gcc git svn
 # mongo
 ADD mongodb.repo /etc/yum.repos.d/mongodb.repo
 RUN sudo yum -y install mongodb-org
+RUN mkdir /home/hidetomo/mongo
+RUN chown hidetomo:hidetomo /home/hidetomo/mongo
+RUN mkdir /home/hidetomo/mongo/db
+RUN chown hidetomo:hidetomo /home/hidetomo/mongo/db
 
 # preinstall
 # RUN sudo yum -y install anaconda
@@ -57,11 +62,13 @@ RUN cd /home/hidetomo
 RUN wget -O /home/hidetomo/Anaconda3.sh https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
 RUN sudo yum -y install graphviz
 RUN mkdir /home/hidetomo/works
+RUN chown hidetomo:hidetomo /home/hidetomo/works
 ADD install_base.sh /home/hidetomo/install_base.sh
 ADD install_sdk.sh /home/hidetomo/install_sdk.sh
 
 # start
 CMD ["sudo /sbin/init"]
-CMD ["sudo systemctl start mongod"]
+# CMD ["sudo systemctl start mongod"]
 # CMD ["sudo systemctl start sshd.service"]
+CMD ["/usr/bin/mongod --dbpath /home/hidetomo/mongo/db > /home/hidetomo/mongo/log 2>&1", "-D"]
 CMD ["/usr/sbin/sshd", "-D"]

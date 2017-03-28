@@ -70,5 +70,6 @@ ADD install_sdk.sh /home/hidetomo/install_sdk.sh
 CMD ["sudo /sbin/init"]
 # CMD ["sudo systemctl start mongod"]
 # CMD ["sudo systemctl start sshd.service"]
-CMD ["export LC_ALL=C; /usr/bin/mongod --dbpath /home/hidetomo/mongo/db > /home/hidetomo/mongo/log 2>&1", "-D"]
+CMD ["export LC_ALL=C"]
+CMD ["/usr/bin/mongod --dbpath /home/hidetomo/mongo/db > /home/hidetomo/mongo/log 2>&1", "-D"]
 CMD ["/usr/sbin/sshd", "-D"]

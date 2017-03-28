@@ -7,3 +7,4 @@
 ### centos command
 - sh ./install_base.sh
 - sh ./install_sdk.sh
+- sh ./start.sh

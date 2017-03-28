@@ -14,7 +14,8 @@ RUN yum -y install initscripts
 RUN yum -y install sudo
 RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# change dir
+# change user and dir
+USER hidetomo
 WORKDIR /home/hidetomo
 
 # ssh
@@ -26,16 +27,13 @@ RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ecdsa_key
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ed25519_key
 RUN mkdir -p .ssh
-RUN chown hidetomo:hidetomo .ssh
 RUN chmod 700 .ssh
 COPY authorized_keys .ssh/authorized_keys
-RUN chown hidetomo:hidetomo .ssh/authorized_keys
 RUN chmod 600 .ssh/authorized_keys
 EXPOSE 22
 
 # ssh key
 COPY id_rsa .ssh/id_rsa
-RUN chown hidetomo:hidetomo .ssh/id_rsa
 
 # vim
 RUN sudo yum -y install vim
@@ -52,9 +50,7 @@ RUN sudo yum -y install less wget bzip2 gcc git svn
 COPY mongodb.repo /etc/yum.repos.d/mongodb.repo
 RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
-RUN chown hidetomo:hidetomo mongo
 RUN mkdir mongo/db
-RUN chown hidetomo:hidetomo mongo/db
 # CMD ["sudo systemctl start mongod"]
 RUN export LC_ALL=C; /usr/bin/mongod --dbpath mongo/db > mongo/log 2>&1 &
 
@@ -63,7 +59,6 @@ RUN export LC_ALL=C; /usr/bin/mongod --dbpath mongo/db > mongo/log 2>&1 &
 RUN wget -O /home/hidetomo/Anaconda3.sh https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
 RUN sudo yum -y install graphviz
 RUN mkdir works
-RUN chown hidetomo:hidetomo works
 COPY install_base.sh install_base.sh
 COPY install_sdk.sh install_sdk.sh
 

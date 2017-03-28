@@ -1,3 +1,5 @@
 authorized_keys
 hostname
 vimrc_simple
+id_rsa
+install_sdk.sh

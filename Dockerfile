@@ -29,17 +29,20 @@ WORKDIR /home/hidetomo
 
 # authorized keys
 RUN mkdir -p .ssh
-RUN chmod 700 .ssh
 COPY authorized_keys .ssh/authorized_keys
+RUN sudo chown hidetomo:hidetomo .ssh/authorized_keys
+RUN chmod 700 .ssh
 RUN chmod 600 .ssh/authorized_keys
 EXPOSE 22
 
 # ssh key
 COPY id_rsa .ssh/id_rsa
+RUN sudo chown hidetomo:hidetomo .ssh/id_rsa
 
 # vim
 RUN sudo yum -y install vim
 COPY vimrc_simple .vimrc
+RUN sudo chown hidetomo:hidetomo .vimrc
 
 # share
 RUN mkdir share
@@ -62,7 +65,9 @@ RUN wget -O /home/hidetomo/Anaconda3.sh https://repo.continuum.io/archive/Anacon
 RUN sudo yum -y install graphviz
 RUN mkdir works
 COPY install_base.sh install_base.sh
+RUN sudo chown hidetomo:hidetomo install_base.sh
 COPY install_sdk.sh install_sdk.sh
+RUN sudo chown hidetomo:hidetomo install_sdk.sh
 
 # start
 # CMD ["sudo systemctl start sshd.service"]

@@ -5,4 +5,5 @@ source /home/hidetomo/.bashrc
 conda update -y conda
 conda update -y anaconda
 conda update -y --all
-pip install graphviz
+conda install -y pymongo
+conda install -y graphviz

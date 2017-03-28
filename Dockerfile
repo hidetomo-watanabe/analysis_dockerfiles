@@ -14,18 +14,20 @@ RUN yum -y install initscripts
 RUN yum -y install sudo
 RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# change user and dir
-USER hidetomo
-WORKDIR /home/hidetomo
-
 # ssh
-RUN sudo yum -y install openssh-server openssh-clients
-RUN sudo echo "RSAAuthentication yes" >> /etc/ssh/sshd_config
-RUN sudo echo "PubKeyAuthentication yes" >> /etc/ssh/sshd_config
+RUN yum -y install openssh-server openssh-clients
+RUN echo "RSAAuthentication yes" >> /etc/ssh/sshd_config
+RUN echo "PubKeyAuthentication yes" >> /etc/ssh/sshd_config
 # RUN sed -i -e '/^HostKey/s/^/# /g' /etc/ssh/sshd_config
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ecdsa_key
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ed25519_key
+
+# change user and dir
+USER hidetomo
+WORKDIR /home/hidetomo
+
+# authorized keys
 RUN mkdir -p .ssh
 RUN chmod 700 .ssh
 COPY authorized_keys .ssh/authorized_keys

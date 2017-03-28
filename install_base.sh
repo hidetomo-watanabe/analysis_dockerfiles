@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh /home/hideotmo/Anaconda3.sh
+sh /home/hidetomo/Anaconda3.sh
 source /home/hidetomo/.bashrc
 conda update -y conda
 conda update -y anaconda

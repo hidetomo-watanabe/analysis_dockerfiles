@@ -57,17 +57,22 @@ RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
 RUN mkdir mongo/db
 # CMD ["sudo systemctl start mongod"]
-RUN export LC_ALL=C; /usr/bin/mongod --dbpath mongo/db > mongo/log 2>&1 &
 
 # preinstall
 # RUN sudo yum -y install anaconda
 RUN wget -O /home/hidetomo/Anaconda3.sh https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
 RUN sudo yum -y install graphviz
 RUN mkdir works
+COPY start.sh start.sh
+RUN sudo chown hidetomo:hidetomo start.sh
 COPY install_base.sh install_base.sh
 RUN sudo chown hidetomo:hidetomo install_base.sh
 COPY install_sdk.sh install_sdk.sh
 RUN sudo chown hidetomo:hidetomo install_sdk.sh
+
+# change user and dir
+USER root
+WORKDIR /root
 
 # start
 # CMD ["sudo systemctl start sshd.service"]

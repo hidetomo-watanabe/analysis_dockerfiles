@@ -16,8 +16,8 @@ RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # ssh
 RUN yum -y install openssh-server openssh-clients
-RUN echo "RSAAuthentication yes" >> /etc/ssh/sshd_config
-RUN echo "PubKeyAuthentication yes" >> /etc/ssh/sshd_config
+RUN echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+RUN sed -i -e 's/^PasswordAuthentication yes$/PasswordAuthentication no/g' /etc/ssh/sshd_config
 # RUN sed -i -e '/^HostKey/s/^/# /g' /etc/ssh/sshd_config
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key
 RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ecdsa_key

@@ -2,7 +2,7 @@
 
 cd /home/hidetomo
 sh Anaconda3.sh
-source .bashrc
+source ~/.bashrc
 conda update -y conda
 conda update -y anaconda
 conda update -y --all

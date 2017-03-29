@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /home/hidetomo
-source .bashrc
+source ~/.bashrc
 git clone <train model> works/<train model>
 cd /home/hidetomo/works/<train model>
 python -u setup.py install

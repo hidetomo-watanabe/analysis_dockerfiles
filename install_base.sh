@@ -8,3 +8,4 @@ conda update -y anaconda
 conda update -y --all
 conda install -y pymongo
 conda install -y graphviz
+pip install graphviz

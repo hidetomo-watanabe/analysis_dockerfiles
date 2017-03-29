@@ -57,6 +57,7 @@ RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
 RUN mkdir mongo/db
 # CMD ["sudo systemctl start mongod"]
+RUN echo "export LC_ALL=C" >> .bashrc
 
 # preinstall
 # RUN sudo yum -y install anaconda

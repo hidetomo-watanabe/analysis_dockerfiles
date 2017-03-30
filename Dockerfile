@@ -23,6 +23,7 @@ WORKDIR /home/hidetomo
 # ssh key
 COPY id_rsa .ssh/id_rsa
 RUN sudo chown hidetomo:hidetomo .ssh/id_rsa
+RUN chmod 600 .ssh/id_rsa
 
 # vim
 RUN sudo yum -y install vim

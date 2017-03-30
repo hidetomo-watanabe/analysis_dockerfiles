@@ -16,26 +16,9 @@ RUN yum -y install initscripts
 RUN yum -y install sudo
 RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# ssh
-RUN yum -y install openssh-server openssh-clients
-RUN echo "PermitRootLogin no" >> /etc/ssh/sshd_config
-RUN sed -i -e 's/^PasswordAuthentication yes$/PasswordAuthentication no/g' /etc/ssh/sshd_config
-# RUN sed -i -e '/^HostKey/s/^/# /g' /etc/ssh/sshd_config
-RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_rsa_key
-RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ecdsa_key
-RUN ssh-keygen -t rsa -N "" -f /etc/ssh/ssh_host_ed25519_key
-
 # change user and dir
 USER hidetomo
 WORKDIR /home/hidetomo
-
-# authorized keys
-RUN mkdir -p .ssh
-COPY authorized_keys .ssh/authorized_keys
-RUN sudo chown hidetomo:hidetomo .ssh/authorized_keys
-RUN chmod 700 .ssh
-RUN chmod 600 .ssh/authorized_keys
-EXPOSE 22
 
 # ssh key
 COPY id_rsa .ssh/id_rsa
@@ -58,7 +41,6 @@ COPY mongodb.repo /etc/yum.repos.d/mongodb.repo
 RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
 RUN mkdir mongo/db
-# CMD ["sudo systemctl start mongod"]
 RUN echo "export LC_ALL=C" >> .bashrc
 
 # preinstall
@@ -68,15 +50,13 @@ RUN sudo yum -y install graphviz
 RUN mkdir works
 COPY start.sh start.sh
 RUN sudo chown hidetomo:hidetomo start.sh
+RUN chmod 644 start.sh
 COPY install_base.sh install_base.sh
 RUN sudo chown hidetomo:hidetomo install_base.sh
+RUN chmod 644 install_base.sh
 COPY install_sdk.sh install_sdk.sh
 RUN sudo chown hidetomo:hidetomo install_sdk.sh
-
-# change user and dir
-USER root
-WORKDIR /root
+RUN chmod 644 install_sdk.sh
 
 # start
-# CMD ["sudo systemctl start sshd.service"]
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/bin/bash", "./start.sh"]

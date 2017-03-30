@@ -2,9 +2,11 @@ FROM centos:7
 MAINTAINER hidetomo
 
 # create user
-RUN echo "root:root" | chpasswd
+COPY root_pass root_pass
+RUN echo "root:$(cat root_pass)" | chpasswd
 RUN useradd hidetomo
-RUN echo "hidetomo:hogehoge" | chpasswd
+COPY hidetomo_pass hidetomo_pass
+RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 
 # init yum
 RUN yum -y update

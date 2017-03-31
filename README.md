@@ -11,5 +11,4 @@
 - docker exec -it hidetomo_dev sudo su - hidetomo
 
 ### centos command
-- sh ./install_base.sh
 - sh ./install_sdk.sh

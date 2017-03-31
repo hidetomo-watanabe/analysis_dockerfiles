@@ -19,6 +19,7 @@ RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # change user and dir
 USER hidetomo
 WORKDIR /home/hidetomo
+ENV HOME /home/hidetomo
 
 # ssh key
 COPY id_rsa .ssh/id_rsa

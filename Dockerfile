@@ -64,11 +64,11 @@ RUN mkdir mongo
 RUN mkdir mongo/db
 RUN echo "export LC_ALL=C" >> .bashrc
 ENV LC_ALL C
-RUN conda update -y pymongo
+RUN conda install -y pymongo
 
 # graphviz
 RUN sudo yum -y install graphviz
-RUN conda update -y graphviz
+RUN conda install -y graphviz
 RUN pip install graphviz
 
 # preinstall

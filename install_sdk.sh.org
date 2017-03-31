@@ -2,8 +2,8 @@
 
 cd /home/hidetomo
 source ~/.bashrc
-git clone <train model> works/<train model>
-cd /home/hidetomo/works/<train model>
-python -u setup.py install
+# sdk
 cd /home/hidetomo
-svn co <original sdk> works/hidetomo_sdk
+git clone <sdk path> works/<sdk>
+cd works/<sdk>
+python -u setup.py install

@@ -38,7 +38,13 @@ RUN mkdir share
 VOLUME share
 
 # common yum
-RUN sudo yum -y install less wget bzip2 gcc git svn
+RUN sudo yum -y install \
+  bzip2 \
+  gcc \
+  git \
+  less \
+  svn \
+  wget
 
 # pyenv
 RUN git clone https://github.com/yyuu/pyenv.git .pyenv

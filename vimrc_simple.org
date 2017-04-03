@@ -25,6 +25,7 @@ set whichwrap=b,s,[,],,~
 set ignorecase
 set wildmenu
 set cursorline
+set encoding=utf-8
 
 nnoremap j gj
 nnoremap k gk

@@ -80,6 +80,9 @@ RUN sudo yum -y install graphviz
 RUN conda install -y graphviz
 RUN pip install graphviz
 
+# malss
+RUN pip install malss
+
 # preinstall
 RUN mkdir works
 COPY start.sh start.sh

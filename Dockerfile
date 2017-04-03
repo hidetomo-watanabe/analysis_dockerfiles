@@ -23,14 +23,14 @@ ENV HOME /home/hidetomo
 
 # ssh key
 COPY id_rsa .ssh/id_rsa
-RUN tr \\r \\n <.ssh/id_rsa> tmp && mv tmp .ssh/id_rsa
+RUN sudo tr \\r \\n <.ssh/id_rsa> tmp && sudo mv tmp .ssh/id_rsa
 RUN sudo chown hidetomo:hidetomo .ssh/id_rsa
 RUN chmod 600 .ssh/id_rsa
 
 # vim
 RUN sudo yum -y install vim
 COPY vimrc_simple .vimrc
-RUN tr \\r \\n <.vimrc> tmp && mv tmp .vimrc
+RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc
 RUN sudo chown hidetomo:hidetomo .vimrc
 
 # share
@@ -67,7 +67,7 @@ RUN conda update -y --all
 
 # mongo
 COPY mongodb.repo /etc/yum.repos.d/mongodb.repo
-RUN tr \\r \\n </etc/yum.repos.d/mongodb.repo> tmp && mv tmp /etc/yum.repos.d/mongodb.repo
+RUN sudo tr \\r \\n </etc/yum.repos.d/mongodb.repo> tmp && sudo mv tmp /etc/yum.repos.d/mongodb.repo
 RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
 RUN mkdir mongo/db
@@ -83,11 +83,11 @@ RUN pip install graphviz
 # preinstall
 RUN mkdir works
 COPY start.sh start.sh
-RUN tr \\r \\n <start.sh> tmp && mv tmp start.sh
+RUN sudo tr \\r \\n <start.sh> tmp && sudo mv tmp start.sh
 RUN sudo chown hidetomo:hidetomo start.sh
 RUN chmod 644 start.sh
 COPY install_sdk.sh install_sdk.sh
-RUN tr \\r \\n <install_sdk.sh> tmp && mv tmp install_sdk.sh
+RUN sudo tr \\r \\n <install_sdk.sh> tmp && sudo mv tmp install_sdk.sh
 RUN sudo chown hidetomo:hidetomo install_sdk.sh
 RUN chmod 644 install_sdk.sh
 

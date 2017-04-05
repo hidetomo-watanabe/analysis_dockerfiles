@@ -83,6 +83,10 @@ RUN pip install graphviz
 # malss
 RUN pip install malss
 
+# keras
+RUN pip install tensorFlow
+RUN pip install keras
+
 # preinstall
 RUN mkdir works
 COPY start.sh start.sh

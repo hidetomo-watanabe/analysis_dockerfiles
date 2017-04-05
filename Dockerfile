@@ -27,6 +27,11 @@ RUN sudo tr \\r \\n <.ssh/id_rsa> tmp && sudo mv tmp .ssh/id_rsa
 RUN sudo chown hidetomo:hidetomo .ssh/id_rsa
 RUN chmod 600 .ssh/id_rsa
 
+# ssh known hosts
+RUN sudo touch .ssh/known_hosts
+RUN sudo chown hidetomo:hidetomo .ssh/known_hosts
+RUN chmod 644 .ssh/known_hosts
+
 # vim
 RUN sudo yum -y install vim
 COPY vimrc_simple .vimrc
@@ -45,6 +50,10 @@ RUN sudo yum -y install \
   less \
   svn \
   wget
+
+# git config
+RUN git config --global user.email 'hidetomo.watanabe@soinn.com'
+RUN git config --global user.name 'hidetomo.watanabe'
 
 # pyenv
 RUN git clone https://github.com/yyuu/pyenv.git .pyenv

@@ -96,6 +96,9 @@ RUN pip install malss
 RUN pip install tensorFlow
 RUN pip install keras
 
+# flake8
+RUN conda install -y flake8
+
 # preinstall
 RUN mkdir works
 COPY start.sh start.sh

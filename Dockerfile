@@ -84,7 +84,7 @@ ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
 RUN conda install -y pip=${pipVer}
 RUN conda install -y openCV=${openCVVer}
 RUN pip install schema==${schemaVer}
-RUN conda install -y flake8=${flake8Ver}
+RUN pip install flake8==${flake8Ver}
 RUN conda install -y seaborn=${seabornVer}
 
 # mongo

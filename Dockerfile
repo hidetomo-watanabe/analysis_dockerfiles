@@ -1,6 +1,15 @@
 FROM centos:7
 MAINTAINER hidetomo
 
+# version
+ARG pyVer=anaconda3-4.0.0
+ARG pipVer=8.1.2
+ARG openCVVer=3.1.0
+ARG schemaVer=0.5.0
+ARG flake8Ver=2.6.2
+ARG seabornVer=0.7.1
+ARG malssVer=v1.0.0
+
 # create user
 COPY root_pass root_pass
 RUN echo "root:$(cat root_pass)" | chpasswd
@@ -65,14 +74,18 @@ RUN echo 'eval "$(pyenv init -)"' >> .bashrc
 
 # anaconda
 # RUN pyenv install -l | grep ana
-RUN pyenv install anaconda3-4.3.1
+RUN pyenv install ${pyVer}
 RUN pyenv rehash
-RUN pyenv global anaconda3-4.3.1
-RUN echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.3.1/bin/:$PATH"' >> .bashrc
-ENV PATH $PYENV_ROOT/versions/anaconda3-4.3.1/bin/:$PATH
-RUN conda update -y conda
-RUN conda update -y anaconda
-RUN conda update -y --all
+RUN pyenv global ${pyVer}
+RUN echo 'export PATH="$PYENV_ROOT/versions/'${pyVer}'/bin/:$PATH"' >> .bashrc
+ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
+
+# common conda or pip
+RUN conda install -y pip=${pipVer}
+RUN conda install -y openCV=${openCVVer}
+RUN pip install schema==${schemaVer}
+RUN conda install -y flake8=${flake8Ver}
+RUN conda install -y seaborn=${seabornVer}
 
 # mongo
 COPY mongodb.repo /etc/yum.repos.d/mongodb.repo
@@ -90,14 +103,11 @@ RUN conda install -y graphviz
 RUN pip install graphviz
 
 # malss
-RUN pip install malss
+RUN pip install malss==${malssVer}
 
 # keras
 RUN pip install tensorFlow
 RUN pip install keras
-
-# flake8
-RUN conda install -y flake8
 
 # preinstall
 RUN mkdir works

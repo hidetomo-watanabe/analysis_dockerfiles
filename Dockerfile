@@ -8,6 +8,7 @@ ARG openCVVer=3.1.0
 ARG schemaVer=0.5.0
 ARG flake8Ver=2.6.2
 ARG seabornVer=0.7.1
+ARG sklearnVer=0.18.1
 ARG malssVer=v1.0.0
 
 # create user
@@ -86,6 +87,7 @@ RUN conda install -y openCV=${openCVVer}
 RUN pip install schema==${schemaVer}
 RUN pip install flake8==${flake8Ver}
 RUN conda install -y seaborn=${seabornVer}
+RUN conda install -y scikit-learn=${sklearnVer}
 
 # mongo
 COPY mongodb.repo /etc/yum.repos.d/mongodb.repo

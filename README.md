@@ -8,7 +8,7 @@
 ### docker command
 - docker build -t hidetomo_dev dev_by_docker
 - docker run -itd --privileged --name hidetomo_dev --hostname hidetomo_dev -v /host/path:/home/hidetomo/share hidetomo_dev
-- docker exec -it hidetomo_dev sudo su - hidetomo
+- docker exec -it hidetomo_dev /bin/bash
 
 ### centos command
 - sh ./install_sdk.sh

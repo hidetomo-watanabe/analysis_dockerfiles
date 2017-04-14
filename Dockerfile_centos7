@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM centos:7
 MAINTAINER hidetomo
 
 # version
@@ -15,23 +15,21 @@ ARG malssVer=v1.0.0
 COPY root_pass root_pass
 RUN echo "root:$(cat root_pass)" | chpasswd
 RUN useradd hidetomo
-RUN mkdir /home/hidetomo && chown hidetomo:hidetomo /home/hidetomo
 COPY hidetomo_pass hidetomo_pass
 RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 
-# init apt-get
-RUN apt-get -y update
+# init yum
+RUN yum -y update
+RUN yum -y install initscripts
 
 # sudo
+RUN yum -y install sudo
 RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # change user and dir
 USER hidetomo
 WORKDIR /home/hidetomo
 ENV HOME /home/hidetomo
-
-# alias
-RUN echo "alias ls='ls --color'" >> .bashrc
 
 # ssh key
 COPY id_rsa .ssh/id_rsa
@@ -45,7 +43,7 @@ RUN sudo chown hidetomo:hidetomo .ssh/known_hosts
 RUN chmod 644 .ssh/known_hosts
 
 # vim
-RUN sudo apt-get -y install vim
+RUN sudo yum -y install vim
 COPY vimrc_simple .vimrc
 RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc
 RUN sudo chown hidetomo:hidetomo .vimrc
@@ -54,13 +52,13 @@ RUN sudo chown hidetomo:hidetomo .vimrc
 RUN mkdir share
 VOLUME share
 
-# common apt-get
-RUN sudo apt-get -y install \
+# common yum
+RUN sudo yum -y install \
   bzip2 \
   gcc \
   git \
   less \
-  subversion \
+  svn \
   wget
 
 # git config
@@ -92,7 +90,9 @@ RUN conda install -y seaborn=${seabornVer}
 RUN conda install -y scikit-learn=${sklearnVer}
 
 # mongo
-RUN sudo apt-get -y install mongodb
+COPY mongodb.repo /etc/yum.repos.d/mongodb.repo
+RUN sudo tr \\r \\n </etc/yum.repos.d/mongodb.repo> tmp && sudo mv tmp /etc/yum.repos.d/mongodb.repo
+RUN sudo yum -y install mongodb-org
 RUN mkdir mongo
 RUN mkdir mongo/db
 RUN echo "export LC_ALL=C" >> .bashrc
@@ -100,7 +100,7 @@ ENV LC_ALL C
 RUN conda install -y pymongo
 
 # graphviz
-RUN sudo apt-get -y install graphviz
+RUN sudo yum -y install graphviz
 RUN conda install -y graphviz
 RUN pip install graphviz
 

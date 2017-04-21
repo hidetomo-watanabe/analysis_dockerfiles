@@ -64,7 +64,7 @@ RUN sudo apt-get -y install \
   wget
 
 # git config
-RUN git config --global user.email 'hidetomo.watanabe@soinn.com'
+RUN git config --global user.email 'attyamunn@gmail.com'
 RUN git config --global user.name 'hidetomo.watanabe'
 
 # pyenv

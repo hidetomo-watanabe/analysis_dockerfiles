@@ -23,6 +23,7 @@ RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 RUN apt-get -y update
 
 # sudo
+RUN apt-get -y install sudo
 RUN echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # change user and dir

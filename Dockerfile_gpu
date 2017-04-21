@@ -109,7 +109,8 @@ RUN pip install graphviz
 RUN pip install malss==${malssVer}
 
 # keras
-RUN pip install tensorFlow
+RUN pip install tensorflow
+RUN pip install tensorflow-gpu
 RUN pip install keras
 
 # preinstall

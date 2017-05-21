@@ -57,6 +57,7 @@ VOLUME share
 
 # common apt-get
 RUN sudo apt-get -y install \
+  unzip \
   bzip2 \
   gcc \
   git \

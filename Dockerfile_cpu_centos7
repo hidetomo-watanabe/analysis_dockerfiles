@@ -54,6 +54,7 @@ VOLUME share
 
 # common yum
 RUN sudo yum -y install \
+  ntp \
   unzip \
   bzip2 \
   gcc \

@@ -6,7 +6,7 @@
 - docker-machine ssh
 
 ### docker command
-- cp Dockerfiles/XX/Dockerfile_XX Dockerfile
+- sh Dockerfiles/create/XX.sh > Dockerfile
 - (nvidia-)docker build -t hidetomo_dev dev_by_docker
 - (nvidia-)docker run -itd --privileged --name hidetomo_dev --hostname hidetomo_dev -v /host/path:/home/hidetomo/share hidetomo_dev
 - docker exec -it hidetomo_dev /bin/bash

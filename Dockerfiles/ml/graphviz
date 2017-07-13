@@ -1,0 +1,4 @@
+# graphviz
+RUN sudo apt-get -y install graphviz
+RUN conda install -y graphviz
+RUN pip install graphviz

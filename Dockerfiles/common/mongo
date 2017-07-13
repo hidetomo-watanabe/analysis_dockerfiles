@@ -1,0 +1,6 @@
+# mongo
+RUN sudo apt-get -y install mongodb
+RUN mkdir mongo
+RUN mkdir mongo/db
+RUN echo "export LC_ALL=C" >> .bashrc
+ENV LC_ALL C

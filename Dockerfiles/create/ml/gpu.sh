@@ -8,5 +8,5 @@ cat common/mongo
 cat ml/pymongo
 cat ml/graphviz
 cat ml/malss
-cat ml/keras
+cat ml/keras_gpu
 cat common/preinstall_start

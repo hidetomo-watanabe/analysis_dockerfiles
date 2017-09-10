@@ -1,4 +1,4 @@
 # keras
 RUN pip install tensorflow
-# RUN pip install tensorflow-gpu
+RUN pip install tensorflow-gpu
 RUN pip install keras

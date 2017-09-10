@@ -1,2 +1,2 @@
 # malss
-# RUN pip install malss==${malssVer}
+RUN pip install malss==${malssVer}

@@ -1,8 +1,5 @@
 # java
-# RUN sudo apt-get -y install python-software-properties software-properties-common
-# RUN sudo sh -c "echo 'oracle-java8-installer shared/accepted-oracle-license-v1-1 select true' | debconf-set-selections"
-# RUN sudo add-apt-repository -y ppa:webupd8team/java
-# RUN sudo apt-get update
-# RUN sudo apt-get -y install oracle-java8-installer
-# RUN sudo apt-get -y install oracle-java8-set-default
-sudo apt-get install openjdk-7-jdk
+# sudo apt-get install openjdk-7-jdk
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oravle-java8-installer

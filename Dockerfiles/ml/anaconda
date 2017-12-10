@@ -18,10 +18,11 @@ ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
 # common conda or pip
 RUN conda install -y pip=${pipVer}
 RUN conda install -y openCV=${openCVVer}
-RUN pip install schema==${schemaVer}
-RUN pip install flake8==${flake8Ver}
 RUN conda install -y seaborn=${seabornVer}
 RUN conda install -y scikit-learn=${sklearnVer}
+RUN pip install schema==${schemaVer}
+RUN pip install flake8==${flake8Ver}
+RUN pip install zenhan
 
 # jupyter
 RUN jupyter-notebook --generate-config

@@ -29,4 +29,4 @@ RUN echo 'c.NotebookApp.ip = "*"' >> .jupyter/jupyter_notebook_config.py
 RUN echo 'c.NotebookApp.open_browser = False' >> .jupyter/jupyter_notebook_config.py
 RUN echo 'c.NotebookApp.port = 8888' >> .jupyter/jupyter_notebook_config.py
 RUN pip install jupyterthemes
-RUN jt -t monokai -f hack
+RUN jt -t grade3 -f hack

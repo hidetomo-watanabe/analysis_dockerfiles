@@ -1,9 +1,10 @@
 # version
 ARG pyVer=anaconda3-4.0.0
-ARG pipVer=8.1.2
+ARG pipVer=9.0.1
 ARG openCVVer=3.1.0
 ARG schemaVer=0.5.0
 ARG flake8Ver=2.6.2
 ARG seabornVer=0.7.1
 ARG sklearnVer=0.18.1
+ARG jupyterthemesVer=0.17
 ARG malssVer=v1.0.0

@@ -20,6 +20,7 @@ RUN conda install -y pip=${pipVer}
 RUN conda install -y openCV=${openCVVer}
 RUN conda install -y seaborn=${seabornVer}
 RUN conda install -y scikit-learn=${sklearnVer}
+RUN conda install -y nomkl
 RUN pip install schema==${schemaVer}
 RUN pip install flake8==${flake8Ver}
 RUN pip install zenhan

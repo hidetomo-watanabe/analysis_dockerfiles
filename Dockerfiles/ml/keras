@@ -1,4 +1,5 @@
 # keras
-RUN pip install tensorflow
-# RUN pip install tensorflow-gpu
-RUN pip install keras
+ARG tensorflowVer=1.2.1
+ARG kerasVer=2.0.6
+RUN conda install -y tensorflow=${tensorflowVer}
+RUN conda install -y keras=${kerasVer}

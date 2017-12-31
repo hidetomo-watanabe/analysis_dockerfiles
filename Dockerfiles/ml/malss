@@ -1,2 +1,3 @@
 # malss
+ARG malssVer=v1.0.0
 RUN pip install malss==${malssVer}

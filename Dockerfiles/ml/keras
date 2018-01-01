@@ -1,5 +1,5 @@
 # keras
-ARG tensorflowVer=1.2.1
-ARG kerasVer=2.0.6
+ARG tensorflowVer=1.3.0
+ARG kerasVer=2.0.8
 RUN conda install -y tensorflow=${tensorflowVer}
 RUN pip install keras==${kerasVer}

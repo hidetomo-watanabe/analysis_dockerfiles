@@ -17,7 +17,7 @@ RUN echo 'export PATH="$PYENV_ROOT/versions/'${pyVer}'/bin/:$PATH"' >> .bashrc
 ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
 
 # common conda or pip
-ARG pipVer=9.0.1
+ARG pipVer=8.1.2
 ARG openCVVer=3.1.0
 ARG seabornVer=0.7.1
 ARG sklearnVer=0.18.1

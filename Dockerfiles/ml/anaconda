@@ -27,6 +27,7 @@ ARG flake8Ver=3.5.0
 ARG nomklVer=1.0
 ARG schemaVer=0.5.0
 ARG zenhanVer=0.5.2
+RUN conda update -y anaconda
 RUN conda install -y conda=${condaVer}
 RUN conda install -y pip=${pipVer}
 RUN conda install -y openCV=${openCVVer}

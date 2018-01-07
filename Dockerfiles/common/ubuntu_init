@@ -50,6 +50,7 @@ RUN sudo apt-get -y install \
   unzip \
   bzip2 \
   gcc \
+  g++ \
   git \
   less \
   subversion \

@@ -47,3 +47,4 @@ RUN echo 'c.NotebookApp.open_browser = False' >> .jupyter/jupyter_notebook_confi
 RUN echo 'c.NotebookApp.port = 8888' >> .jupyter/jupyter_notebook_config.py
 RUN pip install jupyterthemes==${jupyterthemesVer}
 RUN jt -t grade3 -f hack
+RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension

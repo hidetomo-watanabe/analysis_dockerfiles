@@ -58,7 +58,12 @@ RUN sudo apt-get -y install \
   nkf \
   fglrx \
   language-pack-ja-base \
-  language-pack-ja
+  language-pack-ja \
+  xvfb \
+  xfonts-100dpi \
+  xfonts-75dpi \
+  xfonts-scalable \
+  xfonts-cyrillic
 
 # LC
 RUN echo "export LC_ALL=ja_JP.UTF-8" >> .bashrc

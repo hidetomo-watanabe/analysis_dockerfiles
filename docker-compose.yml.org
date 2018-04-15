@@ -1,5 +1,5 @@
-# ml_dl
-ml_dl:
+# hoge
+hoge:
   image: hoge
   container_name: hoge
   hostname: hoge

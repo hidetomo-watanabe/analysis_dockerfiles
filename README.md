@@ -6,11 +6,15 @@
 - docker-machine ssh
 
 ### docker command
+- **cpは適時対応**
 - cd Dockerfiles
 - sh create/XX.sh > Dockerfile
 - (nvidia-)docker build -t hidetomo_dev dev_by_docker
-- (nvidia-)docker run -itd --privileged --name hidetomo_dev --hostname hidetomo_dev -v /host/path:/home/hidetomo/share -p 8888:8888 hidetomo_dev
+- docker-compose up -d
+  - nvidia-dockerは非対応
 - docker exec -it hidetomo_dev /bin/bash
+- docker-compose stop
+- docker-compose rm
 
 ### container command
 - sh ./install_sdk.sh

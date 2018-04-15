@@ -1,4 +1,5 @@
 Dockerfile
+docker-compose.yml
 authorized_keys
 vimrc_simple
 id_rsa

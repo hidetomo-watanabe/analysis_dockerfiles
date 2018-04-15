@@ -1,0 +1,10 @@
+# ml_dl
+ml_dl:
+  image: hoge
+  container_name: hoge
+  hostname: hoge
+  ports:
+    - '8888:8888'
+  volumes:
+    - ~/hoge/share:/home/hidetomo/share
+  privileged: true

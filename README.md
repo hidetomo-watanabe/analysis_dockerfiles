@@ -15,6 +15,3 @@
 - docker exec -it hidetomo_dev /bin/bash
 - docker-compose stop
 - docker-compose rm
-
-### container command
-- sh ./install_sdk.sh

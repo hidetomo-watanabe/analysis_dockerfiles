@@ -4,10 +4,6 @@ COPY start.sh start.sh
 RUN sudo tr \\r \\n <start.sh> tmp && sudo mv tmp start.sh && \
   sudo chown hidetomo:hidetomo start.sh && \
   chmod 644 start.sh
-COPY install_sdk.sh install_sdk.sh
-RUN sudo tr \\r \\n <install_sdk.sh> tmp && sudo mv tmp install_sdk.sh && \
-  sudo chown hidetomo:hidetomo install_sdk.sh && \
-  chmod 644 install_sdk.sh
 
 # start
 CMD ["/bin/bash", "./start.sh"]

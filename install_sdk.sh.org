@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cd /home/hidetomo
-source ~/.bashrc
-# sdk
-cd /home/hidetomo
-git clone <sdk path> works/<sdk>
-cd works/<sdk>
-python -u setup.py install

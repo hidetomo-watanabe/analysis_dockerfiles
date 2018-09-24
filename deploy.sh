@@ -17,4 +17,5 @@ cd Dockerfiles
 sh ./create/ml/${MODE}.sh > ../Dockerfile
 cd ../
 docker build -t mlenv .
+docker-compose stop
 docker-compose up -d

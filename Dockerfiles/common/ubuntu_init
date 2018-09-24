@@ -41,6 +41,7 @@ RUN sudo apt-get -y install \
   bzip2 \
   gcc \
   g++ \
+  cmake \
   git \
   less \
   subversion \

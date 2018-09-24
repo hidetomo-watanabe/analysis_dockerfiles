@@ -1,0 +1,4 @@
+# seaborn
+ARG seabornVer=0.8.1
+RUN conda install -y seaborn=${seabornVer}
+

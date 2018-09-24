@@ -1,10 +1,12 @@
-# hoge
-hoge:
-  image: hoge
-  container_name: hoge
-  hostname: hoge
+# mlenv
+mlenv:
+  image: mlenv
+  container_name: mlenv
+  hostname: mlenv
   ports:
     - '8888:8888'
   volumes:
-    - ~/hoge/share:/home/hidetomo/share
+    - ./share:/home/hidetomo/share
+    - ./.ssh:/home/hidetomo/.ssh
   privileged: true
+  restart: always

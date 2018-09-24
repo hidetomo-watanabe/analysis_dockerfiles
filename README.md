@@ -1,4 +1,4 @@
-# dev_by_docker
+# analysis_dockerfiles
 
 ### docker machine command
 - docker-machine rm default
@@ -6,12 +6,6 @@
 - docker-machine ssh
 
 ### docker command
-- **cpは適時対応**
-- cd Dockerfiles
-- sh create/XX.sh > Dockerfile
-- (nvidia-)docker build -t hidetomo_dev dev_by_docker
-- docker-compose up -d
-  - nvidia-dockerは非対応
-- docker exec -it hidetomo_dev /bin/bash
-- docker-compose stop
-- docker-compose rm
+**nvidia-dockerは個別対応**
+- sh deploy.sh <default or mini or dl>
+- docker exec -it mlenv /bin/bash

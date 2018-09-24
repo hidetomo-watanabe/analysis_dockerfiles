@@ -6,3 +6,4 @@ RUN sudo apt-get -y update
 RUN sudo apt-get install -y oracle-java8-installer
 RUN sudo apt-get -y update
 RUN sudo apt-get install -y gradle
+

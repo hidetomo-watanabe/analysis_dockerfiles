@@ -5,3 +5,4 @@ ARG kerasVer=2.0.8
 RUN conda install -y tensorflow=${tensorflowVer} && \
   conda install -y tensorflow-gpu=${tensorflowgpuVer} && \
   conda install -y keras=${kerasVer}
+

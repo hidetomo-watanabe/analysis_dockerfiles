@@ -1,10 +1,10 @@
 # create user
-COPY root_pass root_pass
+COPY files/root_pass root_pass
 RUN echo "root:$(cat root_pass)" | chpasswd && \
   useradd hidetomo && \
   mkdir /home/hidetomo && \
   chown hidetomo:hidetomo /home/hidetomo
-COPY hidetomo_pass hidetomo_pass
+COPY files/hidetomo_pass hidetomo_pass
 RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 
 # init apt-get
@@ -23,20 +23,9 @@ ENV HOME /home/hidetomo
 RUN echo "alias ls='ls --color'" >> .bashrc && \
   echo "alias ll='ls -lat'" >> .bashrc
 
-# ssh key
-COPY id_rsa .ssh/id_rsa
-RUN sudo tr \\r \\n <.ssh/id_rsa> tmp && sudo mv tmp .ssh/id_rsa && \
-  sudo chown hidetomo:hidetomo .ssh/id_rsa && \
-  chmod 600 .ssh/id_rsa
-
-# ssh known hosts
-RUN sudo touch .ssh/known_hosts && \
-  sudo chown hidetomo:hidetomo .ssh/known_hosts && \
-  chmod 644 .ssh/known_hosts
-
 # vim
 RUN sudo apt-get -y install vim
-COPY vimrc_simple .vimrc
+COPY files/.vimrc .vimrc
 RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
   sudo chown hidetomo:hidetomo .vimrc
 
@@ -73,3 +62,4 @@ ENV LC_ALL ja_JP.UTF-8
 # git config
 # RUN git config --global user.email 'attyamunn@gmail.com' && \
 #   git config --global user.name 'hidetomo-watanabe'
+

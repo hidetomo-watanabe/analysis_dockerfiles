@@ -7,5 +7,5 @@
 
 ### docker command
 **nvidia-dockerは個別対応**
-- sh deploy.sh <default or mini or dl>
+- sh deploy.sh
 - docker exec -it mlenv /bin/bash

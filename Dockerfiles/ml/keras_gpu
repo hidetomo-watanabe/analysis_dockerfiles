@@ -1,4 +1,5 @@
 # keras
 RUN conda install -y tensorflow && \
+  conda install -y tensorflow-gpu && \
   conda install -y keras
 

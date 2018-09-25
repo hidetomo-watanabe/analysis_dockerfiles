@@ -8,5 +8,5 @@ cat ml/xgboost
 cat ml/lightgbm
 cat ml/seaborn
 cat ml/graphviz
-cat ml/keras
+cat ml/keras_gpu
 cat common/preinstall_start

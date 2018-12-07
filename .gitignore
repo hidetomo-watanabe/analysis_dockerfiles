@@ -2,3 +2,5 @@ Dockerfile
 docker-compose.yml
 .ssh/id_rsa
 .ssh/known_hosts
+share/*
+!.gitkeep

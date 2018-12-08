@@ -3,9 +3,6 @@
 MODE=$1
 
 # COPY
-if [ ! -e .ssh/id_rsa ]; then
-  echo "[WARN] NO .ssh/id_rsa"
-fi
 if [ ! -e docker-compose.yml ]; then
   echo "[WARN] NO docker-compose.yml"
   echo "[WARN] COPY docker-compose.yml.org"

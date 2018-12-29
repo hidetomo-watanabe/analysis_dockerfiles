@@ -1,0 +1,3 @@
+# catboost
+RUN pip install catboost
+

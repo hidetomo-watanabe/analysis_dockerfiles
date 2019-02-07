@@ -23,7 +23,7 @@ RUN conda install -y pip && \
   conda install -y flake8 && \
   conda install -y tqdm && \
   pip install schema && \
-  pip install zenhan && \
+  pip install eli5 && \
   pip install heamy && \
   pip install kaggle
 

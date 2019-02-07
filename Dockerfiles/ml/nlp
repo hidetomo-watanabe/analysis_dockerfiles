@@ -1,0 +1,12 @@
+# nlp
+RUN pip install python-Levenshtein && \
+  pip install zenhan
+
+# mecab
+RUN sudo apt-get -y install \
+  swig \
+  mecab \
+  libmecab-dev \
+  mecab-ipadic \
+  mecab-ipadic-utf8
+RUN pip install mecab-python3

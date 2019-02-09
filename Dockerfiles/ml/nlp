@@ -10,3 +10,29 @@ RUN sudo apt-get -y install \
   mecab-ipadic \
   mecab-ipadic-utf8
 RUN pip install mecab-python3
+
+# cabocha
+COPY files/CRF++-0.58.tar.gz .
+RUN tar zxvf CRF++-0.58.tar.gz && \
+  rm CRF++-0.58.tar.gz && \
+  cd CRF++-0.58 && \
+  ./configure && \
+  make && \
+  sudo make install
+USER root
+RUN echo "include /usr/local/bin" >> /etc/ld.so.conf && \
+  ldconfig
+USER hidetomo
+COPY files/cabocha-0.69.tar.bz2 .
+RUN bzip2 -dc cabocha-0.69.tar.bz2 | tar xvf - && \
+  rm cabocha-0.69.tar.bz2 && \
+  cd cabocha-0.69 && \
+  ./configure --with-charset=UTF8 --enable-utf8-only && \
+  make && \
+  sudo make install
+RUN cd cabocha-0.69 && \
+  cd python && \
+  python setup.py build_ext && \
+  python setup.py install && \
+  sudo ldconfig
+

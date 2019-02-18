@@ -1,6 +1,7 @@
 # nlp
 RUN pip install python-Levenshtein && \
-  pip install zenhan
+  pip install zenhan && \
+  pip install spacy
 
 # mecab
 RUN sudo apt-get -y install \

@@ -46,6 +46,7 @@ RUN sudo apt-get -y install \
   less \
   subversion \
   wget \
+  curl \
   nkf \
   fglrx \
   language-pack-ja-base \

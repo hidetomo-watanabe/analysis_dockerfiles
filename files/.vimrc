@@ -38,7 +38,8 @@ imap <C-j> <esc>
 autocmd FileType python setl cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd FileType markdown hi! def link markdownItalic LineNr
-autocmd FileType shellscript setl tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType sh setl tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType vue setl tabstop=2 shiftwidth=2 softtabstop=2
 
 augroup auto_comment_off
     autocmd!

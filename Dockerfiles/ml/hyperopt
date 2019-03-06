@@ -1,0 +1,3 @@
+# hyperopt
+RUN pip install hyperopt
+

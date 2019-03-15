@@ -22,7 +22,7 @@ RUN conda install -y pip && \
   conda install -y dask && \
   conda install -y flake8 && \
   conda install -y tqdm && \
-  pip install pandas-profiliing && \
+  pip install pandas-profiling && \
   pip install schema && \
   pip install eli5 && \
   pip install heamy && \

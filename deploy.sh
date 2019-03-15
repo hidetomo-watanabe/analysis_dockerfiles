@@ -10,9 +10,6 @@ if [ ! -e docker-compose.yml ]; then
 fi
 
 # MAIN
-cd Dockerfiles
-sh ./create/mlenv.sh > ../Dockerfile
-cd ../
 docker build -t mlenv .
 docker-compose stop
 docker-compose rm -f

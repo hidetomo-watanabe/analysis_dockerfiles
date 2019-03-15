@@ -8,4 +8,3 @@
 ### docker command
 **nvidia-dockerは個別対応**
 - sh deploy.sh
-- docker exec -it mlenv /bin/bash

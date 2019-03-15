@@ -1,6 +1,7 @@
 # nlp
 RUN pip install python-Levenshtein && \
   pip install zenhan && \
+  pip install pykakasi && \
   pip install spacy
 
 # mecab

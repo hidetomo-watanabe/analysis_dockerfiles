@@ -64,10 +64,6 @@ RUN sudo apt-get -y install \
 RUN echo "export LC_ALL=ja_JP.UTF-8" >> .bashrc
 ENV LC_ALL ja_JP.UTF-8
 
-# git config
-# RUN git config --global user.email 'attyamunn@gmail.com' && \
-#   git config --global user.name 'hidetomo-watanabe'
-
 # pyenv
 RUN git clone https://github.com/yyuu/pyenv.git .pyenv && \
   echo 'export PYENV_ROOT="$HOME/.pyenv"' >> .bashrc

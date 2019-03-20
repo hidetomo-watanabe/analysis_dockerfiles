@@ -110,7 +110,8 @@ RUN pip install hyperopt
 # nlp
 RUN pip install python-Levenshtein && \
   pip install zenhan && \
-  pip install pykakasi
+  pip install pykakasi && \
+  pip install nltk
 
 # mecab
 RUN sudo apt-get -y install \

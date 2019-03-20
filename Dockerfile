@@ -147,6 +147,13 @@ RUN cd cabocha-0.69 && \
   python setup.py install && \
   sudo ldconfig
 
+# stanford-corenlp
+RUN sudo apt-get -y install openjdk-7-jdk && \
+  curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
+  sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
+  rm ./stanford-corenlp-full-2013-06-20.zip && \
+  pip install corenlp-python
+
 # xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
   cd xgboost && \

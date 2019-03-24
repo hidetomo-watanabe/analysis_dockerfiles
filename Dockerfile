@@ -112,7 +112,8 @@ RUN pip install hyperopt
 RUN pip install python-Levenshtein && \
   pip install zenhan && \
   pip install pykakasi && \
-  pip install nltk
+  pip install nltk && \
+  pip install spacy
 
 # mecab
 RUN sudo apt-get -y install \

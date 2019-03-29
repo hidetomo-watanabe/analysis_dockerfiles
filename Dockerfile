@@ -113,7 +113,8 @@ RUN pip install python-Levenshtein && \
   pip install zenhan && \
   pip install pykakasi && \
   pip install nltk && \
-  pip install spacy
+  pip install spacy && \
+  pip install gensim
 
 # mecab
 RUN sudo apt-get -y install \

@@ -6,6 +6,7 @@ cat ml/conda
 cat ml/jupyter
 cat ml/hyperopt
 cat ml/nlp
+cat ml/bert
 cat ml/xgboost
 cat ml/lightgbm
 cat ml/catboost

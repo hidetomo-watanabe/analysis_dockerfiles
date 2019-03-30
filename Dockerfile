@@ -95,6 +95,10 @@ RUN conda install -y pip && \
   pip install heamy && \
   pip install kaggle
 
+# version down for keras
+RUN pip install scipy==1.1.0 && \
+  pip install pandas==0.23.4
+
 # jupyter
 RUN conda install -y jupyter
 RUN jupyter-notebook --generate-config && \
@@ -156,6 +160,9 @@ RUN sudo apt-get -y install openjdk-7-jdk && \
   sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
   rm ./stanford-corenlp-full-2013-06-20.zip && \
   pip install corenlp-python
+
+# bert
+RUN pip install keras-bert
 
 # xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \

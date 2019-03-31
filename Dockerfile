@@ -164,6 +164,9 @@ RUN sudo apt-get -y install openjdk-7-jdk && \
 # bert
 RUN pip install keras-bert
 
+# opencv
+RUN pip install opencv-python
+
 # xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
   cd xgboost && \
@@ -180,6 +183,10 @@ RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \
 # catboost
 RUN pip install catboost
 
+# keras
+RUN pip install tensorflow && \
+  pip install keras
+
 # seaborn
 RUN conda install -y seaborn
 
@@ -187,10 +194,6 @@ RUN conda install -y seaborn
 RUN sudo apt-get -y update && \
   sudo apt-get -y install graphviz && \
   conda install -y graphviz
-
-# keras
-RUN pip install tensorflow && \
-  pip install keras
 
 # preinstall
 RUN mkdir works

@@ -10,11 +10,9 @@ RUN echo "root:$(cat root_pass)" | chpasswd && \
 COPY files/hidetomo_pass hidetomo_pass
 RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 
-# init apt-get
-RUN apt-get -y update
-
 # sudo
-RUN apt-get -y install sudo && \
+RUN apt-get -y update && \
+  apt-get -y install sudo && \
   echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # change user and dir
@@ -27,7 +25,8 @@ RUN echo "alias ls='ls --color'" >> .bashrc && \
   echo "alias ll='ls -lat'" >> .bashrc
 
 # vim
-RUN sudo apt-get -y install vim
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install vim
 COPY files/.vimrc .vimrc
 RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
   sudo chown hidetomo:hidetomo .vimrc
@@ -37,30 +36,30 @@ RUN mkdir share
 VOLUME share
 
 # common apt-get
-RUN sudo apt-get -y install \
-  ntp \
-  less \
-  zip \
-  unzip \
-  bzip2 \
-  gcc \
-  g++ \
-  cmake \
-  git \
-  subversion \
-  wget \
-  curl \
-  nkf \
-  fglrx \
-  language-pack-ja-base \
-  language-pack-ja \
-  xvfb \
-  xfonts-100dpi \
-  xfonts-75dpi \
-  xfonts-scalable \
-  xfonts-cyrillic
 RUN sudo apt-get -y update && \
-  sudo apt-get -y install htop
+  sudo apt-get -y install \
+    ntp \
+    htop \
+    less \
+    zip \
+    unzip \
+    bzip2 \
+    gcc \
+    g++ \
+    cmake \
+    git \
+    subversion \
+    wget \
+    curl \
+    nkf \
+    fglrx \
+    language-pack-ja-base \
+    language-pack-ja \
+    xvfb \
+    xfonts-100dpi \
+    xfonts-75dpi \
+    xfonts-scalable \
+    xfonts-cyrillic
 
 # LC
 RUN echo "export LC_ALL=ja_JP.UTF-8" >> .bashrc
@@ -123,12 +122,13 @@ RUN pip install python-Levenshtein && \
   pip install gensim
 
 # mecab
-RUN sudo apt-get -y install \
-  swig \
-  mecab \
-  libmecab-dev \
-  mecab-ipadic \
-  mecab-ipadic-utf8
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install \
+    swig \
+    mecab \
+    libmecab-dev \
+    mecab-ipadic \
+    mecab-ipadic-utf8
 RUN pip install mecab-python3
 
 # cabocha
@@ -157,7 +157,8 @@ RUN cd cabocha-0.69 && \
   sudo ldconfig
 
 # stanford-corenlp
-RUN sudo apt-get -y install openjdk-7-jdk && \
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install openjdk-7-jdk && \
   curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
   sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
   rm ./stanford-corenlp-full-2013-06-20.zip && \

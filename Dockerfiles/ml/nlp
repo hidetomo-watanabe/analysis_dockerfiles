@@ -7,12 +7,13 @@ RUN pip install python-Levenshtein && \
   pip install gensim
 
 # mecab
-RUN sudo apt-get -y install \
-  swig \
-  mecab \
-  libmecab-dev \
-  mecab-ipadic \
-  mecab-ipadic-utf8
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install \
+    swig \
+    mecab \
+    libmecab-dev \
+    mecab-ipadic \
+    mecab-ipadic-utf8
 RUN pip install mecab-python3
 
 # cabocha
@@ -41,7 +42,8 @@ RUN cd cabocha-0.69 && \
   sudo ldconfig
 
 # stanford-corenlp
-RUN sudo apt-get -y install openjdk-7-jdk && \
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install openjdk-7-jdk && \
   curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
   sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
   rm ./stanford-corenlp-full-2013-06-20.zip && \

@@ -36,7 +36,6 @@ VOLUME share
 # common apt-get
 RUN sudo apt-get -y install \
   ntp \
-  htop \
   less \
   zip \
   unzip \
@@ -57,6 +56,8 @@ RUN sudo apt-get -y install \
   xfonts-75dpi \
   xfonts-scalable \
   xfonts-cyrillic
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install htop
 
 # LC
 RUN echo "export LC_ALL=ja_JP.UTF-8" >> .bashrc

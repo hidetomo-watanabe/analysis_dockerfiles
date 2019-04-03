@@ -39,6 +39,8 @@ VOLUME share
 # common apt-get
 RUN sudo apt-get -y install \
   ntp \
+  htop \
+  less \
   zip \
   unzip \
   bzip2 \
@@ -46,7 +48,6 @@ RUN sudo apt-get -y install \
   g++ \
   cmake \
   git \
-  less \
   subversion \
   wget \
   curl \

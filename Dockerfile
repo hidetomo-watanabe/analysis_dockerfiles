@@ -109,6 +109,7 @@ RUN jupyter-notebook --generate-config && \
   pip install jupyterthemes && \
   jt -t grade3 -f hack && \
   jupyter nbextension enable --py --sys-prefix widgetsnbextension
+EXPOSE 8888
 
 # hyperopt
 RUN pip install hyperopt

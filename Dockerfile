@@ -168,6 +168,13 @@ RUN sudo apt-get -y update && \
 # bert
 RUN pip install keras-bert
 
+# ocr
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install \
+    tesseract-ocr \
+    libtesseract-dev
+RUN pip install pyocr
+
 # opencv
 RUN pip install opencv-python
 

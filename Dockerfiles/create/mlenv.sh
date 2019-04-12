@@ -7,6 +7,7 @@ cat ml/jupyter
 cat ml/hyperopt
 cat ml/nlp
 cat ml/bert
+cat ml/ocr
 cat ml/opencv
 cat ml/xgboost
 cat ml/lightgbm

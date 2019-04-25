@@ -207,7 +207,6 @@ RUN sudo apt-get -y update && \
   conda install -y graphviz
 
 # preinstall
-RUN mkdir works
 COPY files/start.sh start.sh
 RUN sudo tr \\r \\n <start.sh> tmp && sudo mv tmp start.sh && \
   sudo chown hidetomo:hidetomo start.sh && \

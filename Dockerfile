@@ -91,6 +91,7 @@ RUN conda install -y pip && \
   conda install -y tqdm && \
   pip install schema && \
   pip install pandas-profiling && \
+  pip install shap && \
   pip install imbalanced-learn && \
   pip install eli5 && \
   pip install heamy && \
@@ -99,6 +100,9 @@ RUN conda install -y pip && \
 # version down for keras
 RUN pip install scipy==1.1.0 && \
   pip install pandas==0.23.4
+
+# version down for shap
+RUN pip install scikit-image==0.14.2
 
 # jupyter
 RUN conda install -y jupyter

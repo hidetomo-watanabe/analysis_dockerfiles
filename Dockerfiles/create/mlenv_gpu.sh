@@ -2,7 +2,7 @@
 
 cat common/ubuntu_16_nvidia
 cat common/ubuntu_init
-cat ml/conda
+cat ml/base
 cat ml/jupyter
 cat ml/hyperopt
 cat ml/nlp

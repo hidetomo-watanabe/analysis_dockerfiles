@@ -9,6 +9,7 @@ set laststatus=2
 set statusline=%f\ [%{&fenc==''?&enc:&fenc}][%{&ff}]%=%8l:%c%8P
 set splitright
 set incsearch
+set hlsearch
 set autoindent
 set smartindent
 set expandtab

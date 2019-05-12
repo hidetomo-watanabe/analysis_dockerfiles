@@ -89,6 +89,7 @@ RUN conda install -y pip && \
   conda install -y dask && \
   conda install -y flake8 && \
   conda install -y tqdm && \
+  pip install Cython && \
   pip install schema && \
   pip install pandas-profiling && \
   pip install shap && \
@@ -124,7 +125,8 @@ RUN pip install python-Levenshtein && \
   pip install pykakasi && \
   pip install nltk && \
   pip install spacy && \
-  pip install gensim
+  pip install gensim && \
+  pip install fasttext
 
 # mecab
 RUN sudo apt-get -y update && \

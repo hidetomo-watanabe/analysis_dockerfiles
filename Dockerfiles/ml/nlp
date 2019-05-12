@@ -4,7 +4,8 @@ RUN pip install python-Levenshtein && \
   pip install pykakasi && \
   pip install nltk && \
   pip install spacy && \
-  pip install gensim
+  pip install gensim && \
+  pip install fasttext
 
 # mecab
 RUN sudo apt-get -y update && \

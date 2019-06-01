@@ -12,6 +12,7 @@ cat ml/opencv
 cat ml/xgboost
 cat ml/lightgbm
 cat ml/catboost
+cat ml/rgf
 cat ml/keras
 cat ml/seaborn
 cat ml/graphviz

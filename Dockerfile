@@ -200,6 +200,9 @@ RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \
 # catboost
 RUN pip install catboost
 
+# rgf
+RUN pip install rgf-python
+
 # keras
 RUN pip install tensorflow && \
   pip install keras

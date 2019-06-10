@@ -59,7 +59,8 @@ RUN sudo apt-get -y update && \
     xfonts-100dpi \
     xfonts-75dpi \
     xfonts-scalable \
-    xfonts-cyrillic
+    xfonts-cyrillic \
+    fonts-takao-*
 
 # LC
 RUN echo "export LC_ALL=ja_JP.UTF-8" >> .bashrc

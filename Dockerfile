@@ -90,6 +90,7 @@ RUN conda install -y pip && \
   conda install -y dask && \
   conda install -y flake8 && \
   conda install -y tqdm && \
+  pip install memory_profiler && \
   pip install Cython && \
   pip install schema && \
   pip install pandas-profiling && \

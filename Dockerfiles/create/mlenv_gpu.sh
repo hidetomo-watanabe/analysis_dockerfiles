@@ -4,7 +4,7 @@ cat common/ubuntu_16_nvidia
 cat common/ubuntu_init
 cat ml/base
 cat ml/jupyter
-cat ml/hyperopt
+cat ml/optuna
 cat ml/nlp
 cat ml/bert
 cat ml/ocr

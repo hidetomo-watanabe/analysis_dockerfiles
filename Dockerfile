@@ -114,8 +114,8 @@ RUN jupyter-notebook --generate-config && \
   jupyter nbextension enable --py --sys-prefix widgetsnbextension
 EXPOSE 8888
 
-# hyperopt
-RUN pip install hyperopt
+# optuna
+RUN pip install optuna
 
 # nlp
 RUN pip install python-Levenshtein && \

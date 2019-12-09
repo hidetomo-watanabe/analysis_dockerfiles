@@ -213,11 +213,5 @@ RUN sudo apt-get -y update && \
   sudo apt-get -y install graphviz && \
   conda install -y graphviz
 
-# preinstall
-COPY files/start.sh start.sh
-RUN sudo tr \\r \\n <start.sh> tmp && sudo mv tmp start.sh && \
-  sudo chown hidetomo:hidetomo start.sh && \
-  chmod 644 start.sh
-
 # start
-CMD ["/bin/bash", "./start.sh"]
+CMD ["jupyter", "notebook", "--notebook-dir=share"]

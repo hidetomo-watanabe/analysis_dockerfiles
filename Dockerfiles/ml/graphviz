@@ -1,5 +1,0 @@
-# graphviz
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install graphviz && \
-  conda install -y graphviz
-

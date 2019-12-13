@@ -14,6 +14,5 @@ cat ml/lightgbm
 cat ml/catboost
 cat ml/rgf
 cat ml/keras
-cat ml/seaborn
-cat ml/graphviz
+cat ml/visualization
 cat common/preinstall_start

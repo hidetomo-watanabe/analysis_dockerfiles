@@ -1,3 +1,0 @@
-# seaborn
-RUN conda install -y seaborn
-

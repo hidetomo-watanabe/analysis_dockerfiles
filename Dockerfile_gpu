@@ -94,7 +94,6 @@ RUN conda install -y pip && \
   pip install Cython && \
   pip install schema && \
   pip install pandas-profiling && \
-  pip install shap && \
   pip install imbalanced-learn && \
   pip install eli5 && \
   pip install heamy && \
@@ -206,13 +205,21 @@ RUN pip install tensorflow && \
   pip install tensorflow-gpu && \
   pip install keras
 
-# seaborn
-RUN conda install -y seaborn
-
 # graphviz
 RUN sudo apt-get -y update && \
   sudo apt-get -y install graphviz && \
   conda install -y graphviz
+
+# seaborn
+RUN conda install -y seaborn
+
+# dtreeviz
+RUN sudo apt-get -y update && \
+  sudo apt-get -y install xdg-utils && \
+  pip install dtreeviz
+
+# shap
+RUN pip install shap
 
 # start
 CMD ["jupyter", "notebook", "--notebook-dir=share"]

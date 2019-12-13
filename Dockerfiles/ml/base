@@ -26,7 +26,6 @@ RUN conda install -y pip && \
   pip install Cython && \
   pip install schema && \
   pip install pandas-profiling && \
-  pip install shap && \
   pip install imbalanced-learn && \
   pip install eli5 && \
   pip install heamy && \

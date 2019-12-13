@@ -182,11 +182,7 @@ RUN pip install pyocr
 RUN pip install opencv-python
 
 # xgboost
-RUN git clone --recursive https://github.com/dmlc/xgboost && \
-  cd xgboost && \
-  make -j4 && \
-  cd python-package && \
-  python -u setup.py install
+RUN conda install py-xgboost
 
 # lightgbm
 RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \

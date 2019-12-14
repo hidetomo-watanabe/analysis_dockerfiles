@@ -1,14 +1,14 @@
 # graphviz
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install graphviz && \
+RUN sudo apt -y update && \
+  sudo apt -y install graphviz && \
   conda install -y graphviz
 
 # seaborn
 RUN conda install -y seaborn
 
 # dtreeviz
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install xdg-utils && \
+RUN sudo apt -y update && \
+  sudo apt -y install xdg-utils && \
   pip install dtreeviz
 
 # shap

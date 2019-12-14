@@ -8,8 +8,8 @@ COPY files/hidetomo_pass hidetomo_pass
 RUN echo "hidetomo:$(cat hidetomo_pass)" | chpasswd
 
 # sudo
-RUN apt-get -y update && \
-  apt-get -y install sudo && \
+RUN apt -y update && \
+  apt -y install sudo && \
   echo "hidetomo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # change user and dir
@@ -22,8 +22,8 @@ RUN echo "alias ls='ls --color'" >> .bashrc && \
   echo "alias ll='ls -lat'" >> .bashrc
 
 # vim
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install vim
+RUN sudo apt -y update && \
+  sudo apt -y install vim
 COPY files/.vimrc .vimrc
 RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
   sudo chown hidetomo:hidetomo .vimrc
@@ -32,9 +32,9 @@ RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
 RUN mkdir share
 VOLUME share
 
-# common apt-get
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install \
+# common apt
+RUN sudo apt -y update && \
+  sudo apt -y install \
     ntp \
     htop \
     less \

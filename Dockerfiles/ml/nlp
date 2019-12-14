@@ -8,8 +8,8 @@ RUN pip install python-Levenshtein && \
   pip install fasttext
 
 # mecab
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install \
+RUN sudo apt -y update && \
+  sudo apt -y install \
     swig \
     mecab \
     libmecab-dev \
@@ -43,8 +43,8 @@ RUN cd cabocha-0.69 && \
   sudo ldconfig
 
 # stanford-corenlp
-RUN sudo apt-get -y update && \
-  sudo apt-get -y install openjdk-7-jdk && \
+RUN sudo apt -y update && \
+  sudo apt -y install openjdk-7-jdk && \
   curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
   sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
   rm ./stanford-corenlp-full-2013-06-20.zip && \

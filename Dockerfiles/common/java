@@ -1,9 +1,10 @@
 # java
-# sudo apt-get install openjdk-7-jdk
-RUN sudo apt-get install -y software-properties-common
-RUN sudo add-apt-repository ppa:webupd8team/java
-RUN sudo apt-get -y update
-RUN sudo apt-get install -y oracle-java8-installer
-RUN sudo apt-get -y update
-RUN sudo apt-get install -y gradle
+# sudo apt install openjdk-7-jdk
+RUN sudo apt -y update && \
+  sudo apt install -y software-properties-common && \
+  sudo add-apt-repository ppa:webupd8team/java
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    oracle-java8-installer \
+    gradle
 

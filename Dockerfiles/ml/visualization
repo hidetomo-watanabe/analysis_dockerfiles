@@ -9,8 +9,8 @@ RUN conda install -y seaborn
 # dtreeviz
 RUN sudo apt -y update && \
   sudo apt -y install xdg-utils && \
-  pip install dtreeviz
+  pip install dtreeviz==0.8.1
 
 # shap
-RUN pip install shap
+RUN pip install shap==0.33.0
 

@@ -1,4 +1,4 @@
 # keras
-RUN pip install tensorflow && \
-  pip install keras
+RUN pip install tensorflow==2.0.0 \
+  keras
 

@@ -1,3 +1,3 @@
 # rgf
-RUN pip install rgf-python
+RUN pip install rgf-python==3.6.0
 

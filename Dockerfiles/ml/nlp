@@ -1,11 +1,11 @@
 # nlp
-RUN pip install python-Levenshtein && \
-  pip install zenhan && \
-  pip install pykakasi && \
-  pip install nltk && \
-  pip install spacy && \
-  pip install gensim && \
-  pip install fasttext
+RUN pip install python-Levenshtein==0.12.0 \
+  zenhan==0.5.2 \
+  pykakasi==1.2 \
+  nltk==3.4.5 \
+  spacy==2.2.3 \
+  gensim==3.8.1 \
+  fasttext==0.9.1
 
 # mecab
 RUN sudo apt -y update && \
@@ -15,7 +15,7 @@ RUN sudo apt -y update && \
     libmecab-dev \
     mecab-ipadic \
     mecab-ipadic-utf8
-RUN pip install mecab-python3
+RUN pip install mecab-python3==0.996.2
 
 # cabocha
 COPY files/CRF++-0.58.tar.gz .
@@ -48,5 +48,5 @@ RUN sudo apt -y update && \
   curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
   sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
   rm ./stanford-corenlp-full-2013-06-20.zip && \
-  pip install corenlp-python
+  pip install corenlp-python==3.4.1.post1
 

@@ -1,3 +1,3 @@
 # bert
-RUN pip install keras-bert
+RUN pip install keras-bert==0.80.0
 

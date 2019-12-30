@@ -86,14 +86,14 @@ ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
 # common conda or pip
 RUN conda install -y pip && \
   conda install -y openCV && \
-  conda install -y scikit-learn && \
-  conda install -y dask && \
-  conda install -y flake8 && \
-  conda install -y tqdm && \
   pip install memory_profiler==0.55.0 \
+    flake8==3.7.9 \
+    tqdm==4.40.0 \
+    pandas-profiling==2.3.0 \
     Cython==0.29.14 \
     schema==0.7.1 \
-    pandas-profiling==2.3.0 \
+    dask==2.9.0 \
+    scikit-learn==0.22 \
     imbalanced-learn==0.6.1 \
     eli5==0.10.1 \
     heamy==0.0.7 \
@@ -103,7 +103,7 @@ RUN conda install -y pip && \
 RUN pip install scikit-image==0.14.2
 
 # jupyter
-RUN conda install -y jupyter
+RUN pip install jupyter==1.0.0
 RUN jupyter-notebook --generate-config && \
   echo 'c.NotebookApp.ip = "0.0.0.0"' >> .jupyter/jupyter_notebook_config.py && \
   echo 'c.NotebookApp.open_browser = False' >> .jupyter/jupyter_notebook_config.py && \
@@ -180,7 +180,7 @@ RUN pip install pyocr==0.7.2
 RUN pip install opencv-python==4.1.2.30
 
 # xgboost
-RUN conda install py-xgboost
+RUN pip install xgboost==0.90
 
 # lightgbm
 RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \
@@ -201,10 +201,10 @@ RUN pip install tensorflow==2.0.0 \
 # graphviz
 RUN sudo apt -y update && \
   sudo apt -y install graphviz && \
-  conda install -y graphviz
+  pip install graphviz==0.13.2
 
 # seaborn
-RUN conda install -y seaborn
+RUN pip install seaborn==0.9.0
 
 # dtreeviz
 RUN sudo apt -y update && \

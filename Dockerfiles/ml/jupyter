@@ -1,5 +1,5 @@
 # jupyter
-RUN conda install -y jupyter
+RUN pip install jupyter==1.0.0
 RUN jupyter-notebook --generate-config && \
   echo 'c.NotebookApp.ip = "0.0.0.0"' >> .jupyter/jupyter_notebook_config.py && \
   echo 'c.NotebookApp.open_browser = False' >> .jupyter/jupyter_notebook_config.py && \

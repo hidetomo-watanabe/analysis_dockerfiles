@@ -183,7 +183,7 @@ RUN pip install opencv-python==4.1.2.30
 RUN pip install xgboost==0.90
 
 # lightgbm
-RUN pip install lightgbm==2.3.2
+RUN pip install lightgbm==2.3.1
 
 # catboost
 RUN pip install catboost==0.20.1

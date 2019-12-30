@@ -94,7 +94,7 @@ RUN conda install -y pip && \
     schema==0.7.1 \
     dask==2.9.0 \
     scikit-learn==0.21.3 \
-    imbalanced-learn==0.6.1 \
+    imbalanced-learn==0.5.0 \
     eli5==0.10.1 \
     heamy==0.0.7 \
     kaggle==1.5.6

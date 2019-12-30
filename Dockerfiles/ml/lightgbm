@@ -1,6 +1,3 @@
 # lightgbm
-RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \
-  cd LightGBM && \
-  cd python-package && \
-  python -u setup.py install
+RUN pip install lighttgbm==2.3.2
 

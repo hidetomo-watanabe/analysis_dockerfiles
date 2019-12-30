@@ -93,7 +93,7 @@ RUN conda install -y pip && \
     Cython==0.29.14 \
     schema==0.7.1 \
     dask==2.9.0 \
-    scikit-learn==0.22 \
+    scikit-learn==0.21.3 \
     imbalanced-learn==0.6.1 \
     eli5==0.10.1 \
     heamy==0.0.7 \
@@ -183,10 +183,7 @@ RUN pip install opencv-python==4.1.2.30
 RUN pip install xgboost==0.90
 
 # lightgbm
-RUN git clone --recursive https://github.com/Microsoft/LightGBM.git && \
-  cd LightGBM && \
-  cd python-package && \
-  python -u setup.py install
+RUN pip install lighttgbm==2.3.2
 
 # catboost
 RUN pip install catboost==0.20.1

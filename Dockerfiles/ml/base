@@ -25,7 +25,7 @@ RUN conda install -y pip && \
     Cython==0.29.14 \
     schema==0.7.1 \
     dask==2.9.0 \
-    scikit-learn==0.22 \
+    scikit-learn==0.21.3 \
     imbalanced-learn==0.6.1 \
     eli5==0.10.1 \
     heamy==0.0.7 \

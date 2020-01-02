@@ -86,7 +86,8 @@ ENV PATH $PYENV_ROOT/versions/${pyVer}/bin/:$PATH
 # common conda or pip
 RUN conda install -y pip && \
   conda install -y openCV && \
-  pip install memory_profiler==0.55.0 \
+  pip install opencv-python==4.1.2.30 \
+    memory_profiler==0.55.0 \
     flake8==3.7.9 \
     tqdm==4.40.0 \
     pandas-profiling==2.3.0 \
@@ -176,9 +177,6 @@ RUN sudo apt -y update && \
     libtesseract-dev
 RUN pip install pyocr==0.7.2
 
-# opencv
-RUN pip install opencv-python==4.1.2.30
-
 # xgboost
 RUN pip install xgboost==0.90
 
@@ -193,7 +191,12 @@ RUN pip install rgf-python==3.6.0
 
 # keras
 RUN pip install tensorflow==2.0.0 \
-  keras
+  Keras==2.3.1
+
+# pytorch
+RUN pip install torch==1.3.1 \
+  torchvision==0.4.2 \
+  skorch==0.7.0
 
 # graphviz
 RUN sudo apt -y update && \

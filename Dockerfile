@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER hidetomo
 
 # create user
@@ -52,7 +52,6 @@ RUN sudo apt -y update && \
     wget \
     curl \
     nkf \
-    fglrx \
     language-pack-ja-base \
     language-pack-ja \
     xvfb \
@@ -160,12 +159,12 @@ RUN cd cabocha-0.69 && \
   sudo ldconfig
 
 # stanford-corenlp
-RUN sudo apt -y update && \
-  sudo apt -y install openjdk-7-jdk && \
-  curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
-  sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
-  rm ./stanford-corenlp-full-2013-06-20.zip && \
-  pip install corenlp-python==3.4.1.post1
+# RUN sudo apt -y update && \
+  # sudo apt -y install openjdk-7-jdk && \
+  # curl -L -O http://nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip && \
+  # sudo unzip ./stanford-corenlp-full-2013-06-20.zip -d /usr/local/lib/ && \
+  # rm ./stanford-corenlp-full-2013-06-20.zip && \
+  # pip install corenlp-python==3.4.1.post1
 
 # bert
 RUN pip install keras-bert==0.80.0

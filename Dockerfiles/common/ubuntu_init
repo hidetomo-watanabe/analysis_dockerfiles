@@ -49,7 +49,6 @@ RUN sudo apt -y update && \
     wget \
     curl \
     nkf \
-    fglrx \
     language-pack-ja-base \
     language-pack-ja \
     xvfb \

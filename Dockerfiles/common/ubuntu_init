@@ -32,6 +32,12 @@ RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
 RUN mkdir share
 VOLUME share
 
+# tzdata
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    tzdata
+ENV TZ Asia/Tokyo
+
 # common apt
 RUN sudo apt -y update && \
   sudo apt -y install \

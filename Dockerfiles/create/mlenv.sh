@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat common/ubuntu_16
+cat common/ubuntu_18
 cat common/ubuntu_init
 cat ml/base
 cat ml/jupyter

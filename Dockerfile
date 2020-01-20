@@ -1,5 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER hidetomo
+
+ENV DEBIAN_FRONTEND noninteractive
 
 # create user
 COPY files/root_pass root_pass
@@ -34,6 +36,12 @@ RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
 # share
 RUN mkdir share
 VOLUME share
+
+# tzdata
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    tzdata
+ENV TZ Asia/Tokyo
 
 # common apt
 RUN sudo apt -y update && \
@@ -96,6 +104,7 @@ RUN conda install -y pip && \
     scikit-learn==0.21.3 \
     imbalanced-learn==0.5.0 \
     eli5==0.10.1 \
+    boruta==0.3 \
     heamy==0.0.7 \
     kaggle==1.5.6
 

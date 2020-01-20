@@ -29,6 +29,7 @@ RUN conda install -y pip && \
     scikit-learn==0.21.3 \
     imbalanced-learn==0.5.0 \
     eli5==0.10.1 \
+    boruta==0.3 \
     heamy==0.0.7 \
     kaggle==1.5.6
 

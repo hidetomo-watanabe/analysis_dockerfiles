@@ -100,6 +100,7 @@ RUN conda install -y pip && \
     schema==0.7.1 \
     dask==2.9.0 \
     scikit-learn==0.21.3 \
+    category-encoders==2.1.0 \
     imbalanced-learn==0.5.0 \
     eli5==0.10.1 \
     boruta==0.3 \

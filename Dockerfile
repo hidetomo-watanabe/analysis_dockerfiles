@@ -22,16 +22,20 @@ USER hidetomo
 WORKDIR /home/hidetomo
 ENV HOME /home/hidetomo
 
+# wget
+RUN sudo apt -y update && \
+  sudo apt -y install wget
+
 # alias
-RUN echo "alias ls='ls --color'" >> .bashrc && \
-  echo "alias ll='ls -lat'" >> .bashrc && \
-  echo "grep='grep --color'" >> .bashrc && \
-  echo "df='df -h'" >> .bashrc
+RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/.git-prompt.sh
+RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/.bash_profile
+RUN chmod 600 .bash_profile
+RUN echo "source ~/.bash_profile" >> .bashrc
 
 # vim
 RUN sudo apt -y update && \
   sudo apt -y install vim
-COPY files/.vimrc .vimrc
+RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/vimrc_simple -O .vimrc
 RUN sudo tr \\r \\n <.vimrc> tmp && sudo mv tmp .vimrc && \
   sudo chown hidetomo:hidetomo .vimrc
 
@@ -59,7 +63,6 @@ RUN sudo apt -y update && \
     cmake \
     git \
     subversion \
-    wget \
     curl \
     nkf \
     language-pack-ja-base \

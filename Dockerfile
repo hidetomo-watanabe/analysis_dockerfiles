@@ -24,7 +24,9 @@ ENV HOME /home/hidetomo
 
 # alias
 RUN echo "alias ls='ls --color'" >> .bashrc && \
-  echo "alias ll='ls -lat'" >> .bashrc
+  echo "alias ll='ls -lat'" >> .bashrc && \
+  echo "grep='grep --color'" >> .bashrc && \
+  echo "df='df -h'" >> .bashrc
 
 # vim
 RUN sudo apt -y update && \

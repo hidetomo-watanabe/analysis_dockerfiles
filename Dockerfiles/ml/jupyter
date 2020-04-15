@@ -4,6 +4,6 @@ RUN jupyter-notebook --generate-config && \
   echo 'c.NotebookApp.ip = "0.0.0.0"' >> .jupyter/jupyter_notebook_config.py && \
   echo 'c.NotebookApp.open_browser = False' >> .jupyter/jupyter_notebook_config.py && \
   pip install jupyterthemes==0.20.0 && \
-  jt -t grade3 -f hack && \
+  jt -t monokai -T -N -kl -f inconsolata -tfs 11 -cellw 90% && \
   jupyter nbextension enable --py --sys-prefix widgetsnbextension
 

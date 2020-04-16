@@ -133,11 +133,11 @@ RUN mkdir -p $(jupyter --data-dir)/nbextensions && \
 RUN cd .jupyter/custom && \
   echo '/* Jupyter cell is in normal mode when code mirror */' >> tmp_custom.css && \
   echo '.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {' >> tmp_custom.css && \
-  echo 'background-color: #000000 !important;' >> tmp_custom.css && \
+  echo ' background-color: #000000 !important;' >> tmp_custom.css && \
   echo '}' >> tmp_custom.css && \
   echo '/* Jupyter cell is in insert mode when code mirror */' >> tmp_custom.css && \
-  echo 'edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {' >> tmp_custom.css && \
-  echo 'background-color: #000000 !important;' >> tmp_custom.css && \
+  echo '.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {' >> tmp_custom.css && \
+  echo ' background-color: #000000 !important;' >> tmp_custom.css && \
   echo '}' >> tmp_custom.css && \
   cat custom.css >> tmp_custom.css && \
   mv tmp_custom.css custom.css

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat common/ubuntu_16_nvidia
+cat common/ubuntu_18_nvidia
 cat common/ubuntu_init
 cat ml/base
 cat ml/jupyter

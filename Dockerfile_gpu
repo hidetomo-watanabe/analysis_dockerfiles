@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.1-base-ubuntu18.04
+FROM nvidia/cuda:10.2-base-ubuntu18.04
 MAINTAINER hidetomo
 
 # create user
@@ -218,8 +218,29 @@ RUN pip install catboost==0.20.1
 RUN pip install rgf-python==3.6.0
 
 # keras
-RUN pip install tensorflow==2.0.0 \
-  tensorflow-gpu \
+RUN echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH" >> .bashrc
+ENV LD_LIBRARY_PATH /usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    libcudnn7 \
+    libcudnn7-dev \
+    libnvinfer6 \
+    libnvinfer-dev \
+    libnvinfer-plugin6
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    cuda-cufft-10-2 \
+    cuda-cufft-dev-10-2 \
+    cuda-curand-10-2 \
+    cuda-curand-dev-10-2 \
+    cuda-cusolver-10-2 \
+    cuda-cusolver-dev-10-2 \
+    cuda-cusparse-10-2 \
+    cuda-cusparse-dev-10-2 \
+    cuda-nvrtc-10-2 \
+    cuda-nvrtc-dev-10-2 \
+    cuda-cudart-10-1
+RUN pip install tensorflow==2.1.0 \
   Keras==2.3.1
 
 # pytorch

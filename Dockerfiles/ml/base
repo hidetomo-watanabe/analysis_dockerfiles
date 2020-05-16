@@ -21,6 +21,7 @@ RUN conda install -y pip && \
   pip install opencv-python==4.1.2.30 \
     memory_profiler==0.55.0 \
     flake8==3.7.9 \
+    flake8-import-order==0.18.1 \
     tqdm==4.40.0 \
     pandas-profiling==2.3.0 \
     Cython==0.29.14 \

@@ -198,9 +198,6 @@ RUN cd cabocha-0.69 && \
   # rm ./stanford-corenlp-full-2013-06-20.zip && \
   # pip install corenlp-python==3.4.1.post1
 
-# bert
-RUN pip install keras-bert==0.80.0
-
 # ocr
 RUN sudo apt -y update && \
   sudo apt -y install \
@@ -228,6 +225,11 @@ RUN pip install tensorflow==2.0.0 \
 RUN pip install torch==1.3.1 \
   torchvision==0.4.2 \
   skorch==0.7.0
+
+# bert
+RUN git clone -b master https://github.com/charles9n/bert-sklearn && \
+  cd bert-sklearn/ && \
+  pip install .
 
 # graphviz
 RUN sudo apt -y update && \

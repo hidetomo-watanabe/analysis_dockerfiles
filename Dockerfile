@@ -198,6 +198,13 @@ RUN cd cabocha-0.69 && \
   # rm ./stanford-corenlp-full-2013-06-20.zip && \
   # pip install corenlp-python==3.4.1.post1
 
+# ocr
+RUN sudo apt -y update && \
+  sudo apt -y install \
+    tesseract-ocr \
+    libtesseract-dev
+RUN pip install pyocr==0.7.2
+
 # xgboost
 RUN pip install xgboost==0.90
 

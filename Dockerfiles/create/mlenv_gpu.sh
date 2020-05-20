@@ -6,7 +6,7 @@ cat ml/base
 cat ml/jupyter
 cat ml/optuna
 cat ml/nlp
-# cat ml/ocr
+cat ml/ocr
 cat ml/xgboost
 cat ml/lightgbm
 cat ml/catboost

@@ -247,5 +247,8 @@ RUN sudo apt -y update && \
 # shap
 RUN pip install shap==0.33.0
 
+# japanize
+pip install japanize-matplotlib
+
 # start
 CMD ["jupyter", "notebook", "--notebook-dir=share", "--port=8888"]

@@ -15,5 +15,5 @@ RUN sudo apt -y update && \
 RUN pip install shap==0.33.0
 
 # japanize
-pip install japanize-matplotlib
+RUN pip install japanize-matplotlib==1.1.2
 

@@ -27,8 +27,8 @@ RUN sudo apt -y update && \
   sudo apt -y install wget
 
 # alias
-RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/.git-prompt.sh
-RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/.bash_profile
+RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/bash/.git-prompt.sh
+RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/bash/.bash_profile
 RUN chmod 600 .bash_profile
 RUN echo "source ~/.bash_profile" >> .bashrc
 

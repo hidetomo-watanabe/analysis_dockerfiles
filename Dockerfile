@@ -103,6 +103,7 @@ RUN conda install -y pip && \
     flake8==3.7.9 \
     flake8-import-order==0.18.1 \
     tqdm==4.40.0 \
+    fire==0.4.0 \
     pandas-profiling==2.3.0 \
     Cython==0.29.14 \
     schema==0.7.1 \

@@ -110,7 +110,7 @@ RUN conda install -y pip && \
     dask==2.9.0 \
     scikit-learn==0.22.2 \
     category-encoders==2.1.0 \
-    imbalanced-learn==0.5.0 \
+    imbalanced-learn==0.6.2 \
     eli5==0.10.1 \
     boruta==0.3 \
     heamy==0.0.7 \
@@ -225,7 +225,7 @@ RUN pip install tensorflow==2.0.0 \
 # pytorch
 RUN pip install torch==1.3.1 \
   torchvision==0.4.2 \
-  skorch==0.7.0
+  skorch==0.9.0
 
 # bert
 RUN git clone -b master https://github.com/charles9n/bert-sklearn && \

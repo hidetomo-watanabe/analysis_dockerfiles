@@ -9,7 +9,7 @@ services:
     # ports:
       # - '8888:8888'
     volumes:
-      - ./share:/home/hidetomo/share
-      - ./.ssh:/home/hidetomo/.ssh
+      - ./share:/root/share
+      - ./.ssh:/root/.ssh
     privileged: true
     restart: always

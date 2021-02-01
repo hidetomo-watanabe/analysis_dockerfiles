@@ -1,3 +1,0 @@
-# xgboost
-RUN pip install xgboost==0.90
-

@@ -1,7 +1,0 @@
-# ocr
-RUN sudo apt -y update && \
-  sudo apt -y install \
-    tesseract-ocr \
-    libtesseract-dev
-RUN pip install pyocr==0.7.2
-

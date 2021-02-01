@@ -1,2 +1,0 @@
-# start
-CMD ["jupyter", "notebook", "--notebook-dir=share", "--port=8888"]

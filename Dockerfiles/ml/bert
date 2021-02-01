@@ -1,5 +1,0 @@
-# bert
-RUN git clone -b master https://github.com/charles9n/bert-sklearn && \
-  cd bert-sklearn/ && \
-  pip install .
-

@@ -1,5 +1,0 @@
-# pytorch
-RUN pip install torch==1.3.1 \
-  torchvision==0.4.2 \
-  skorch==0.9.0
-

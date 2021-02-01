@@ -1,3 +1,0 @@
-# lightgbm
-RUN pip install lightgbm==2.3.1
-

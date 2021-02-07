@@ -62,13 +62,13 @@ RUN cd cabocha-0.69 && \
   python setup.py install && \
   ldconfig
 
+# torch
 RUN pip install \
   skorch==0.9.0
 
 # bert
-RUN git clone -b master https://github.com/charles9n/bert-sklearn && \
-  cd bert-sklearn/ && \
-  pip install .
+RUN pip install \
+  keras-bert==0.86.0
 
 # dtreeviz
 RUN apt -y update && \

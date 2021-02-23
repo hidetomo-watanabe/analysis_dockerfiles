@@ -68,7 +68,7 @@ RUN pip install \
 
 # bert
 RUN pip install \
-  keras-bert==0.86.0
+  bert-for-tf2==0.14.9
 
 # dtreeviz
 RUN apt -y update && \

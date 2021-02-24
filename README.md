@@ -5,7 +5,7 @@
 - vi docker-compose.override.yml
 - docker-compose up -d
 
-### docker command for gpu(CUDA 10.2)
+### docker command for gpu
 - docker build -t mlenv_gpu -f Dockerfile_gpu .
 - docker run --name mlenv_gpu --hostname mlenv_gpu --gpus all --net='host' -v $(pwd)/share:/home/hidetomo/share -v $(pwd)/.ssh:/home/hidetomo/.ssh --privileged=true --restart=always -itd mlenv_gpu
 

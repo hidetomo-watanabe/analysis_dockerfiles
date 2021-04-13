@@ -1,4 +1,4 @@
-FROM gcr.io/kaggle-images/python:v95
+FROM gcr.io/kaggle-images/python:v99
 MAINTAINER hidetomo
 
 # change build dir

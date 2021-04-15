@@ -88,7 +88,7 @@ RUN mkdir -p $(jupyter --data-dir)/nbextensions && \
   jupyter nbextension enable vim_binding/vim_binding
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
-# create work user
+# create hidetomo
 RUN useradd hidetomo && \
   mkdir /home/hidetomo && \
   chown hidetomo:hidetomo /home/hidetomo && \
@@ -96,6 +96,8 @@ RUN useradd hidetomo && \
 USER hidetomo
 WORKDIR /home/hidetomo
 ENV HOME /home/hidetomo
+
+# path
 ENV PATH /opt/conda/bin:$PATH
 
 # share
@@ -132,3 +134,4 @@ RUN jupyter-notebook --generate-config && \
 
 # start
 CMD ["jupyter", "notebook", "--notebook-dir=share", "--port=8888"]
+# CMD ["jupyter", "notebook", "--notebook-dir=share", "--port=8888", "--allow-root"]

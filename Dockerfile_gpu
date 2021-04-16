@@ -15,6 +15,7 @@ ENV TZ Asia/Tokyo
 RUN apt -y update && \
   apt -y install \
     sudo \
+    less \
     htop \
     nkf
 

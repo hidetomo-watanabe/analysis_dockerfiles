@@ -15,4 +15,4 @@
   - コンテナ起動設定の`/home/hidetomo`を`/root`に変更
 
 ### ref
-- https://github.com/hidetomo-watanabe/analysis_for_kaggle
+- https://github.com/hidetomo-watanabe/sklearn_wrapper

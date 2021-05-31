@@ -22,8 +22,7 @@ RUN apt -y update && \
 # common pip
 RUN pip install \
   flake8-import-order==0.18.1 \
-  fire==0.4.0 \
-  heamy==0.0.7
+  fire==0.4.0
 
 # nlp
 RUN pip install \

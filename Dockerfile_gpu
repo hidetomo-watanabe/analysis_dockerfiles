@@ -102,7 +102,6 @@ ENV PATH /opt/conda/bin:$PATH
 
 # share
 RUN mkdir share
-VOLUME share
 
 # bash
 RUN wget https://raw.githubusercontent.com/hidetomo-watanabe/dotfiles/master/bash/.git-prompt.sh

@@ -70,6 +70,10 @@ RUN pip install \
 RUN pip install \
   bert-for-tf2==0.14.9
 
+# tabnet
+RUN pip install \
+  pytorch-tabnet==3.1.1
+
 # dtreeviz
 RUN apt -y update && \
   apt -y install xdg-utils && \
